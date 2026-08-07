@@ -1,0 +1,21 @@
+# this is the name of the workflow, it will be displayed in the GitHub Actions UI
+name: 01 - Fundamentals
+# this is the trigger for the workflow, it will run on every push to the repository
+on: push
+# this is the list of jobs that will be run as part of the workflow
+jobs:
+    echo-hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Say Hello
+              run: echo "Hello, World!"
+    echo-goodbye:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Failed step
+              run: |
+                echo "Step failed!"
+                exit 1
+            - name: Say Goodbye
+              run: echo "Goodbye, World!"
+
